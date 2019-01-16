@@ -140,6 +140,18 @@ NSMutableSet *_ll_classAdoptedAllProtocolNameList;
     return propertyArray.copy;
 }
 
++ (void)ll_swizzleMethod:(SEL)s1 method:(SEL)s2
+{
+    Method m1 = class_getInstanceMethod(self, s1);
+    Method m2 = class_getInstanceMethod(self, s2);
+    method_exchangeImplementations(m1, m2);
+}
+
++ (void)ll_swizzleClassMethod:(SEL)s1 method:(SEL)s2
+{
+    [object_getClass(self) ll_swizzleMethod:s1 method:s2];
+}
+
 @end
 
 

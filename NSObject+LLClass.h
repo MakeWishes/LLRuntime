@@ -71,6 +71,16 @@
  */
 + (NSArray<NSString *> *)ll_propertyNameList;
 
+/**
+ * Method Swizzling 交换实例方法
+ */
++ (void)ll_swizzleMethod:(SEL)s1 method:(SEL)s2;
+
+/**
+ * Method Swizzling 交换类方法
+ */
++ (void)ll_swizzleClassMethod:(SEL)s1 method:(SEL)s2;
+
 @end
 
 
