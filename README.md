@@ -8,15 +8,15 @@
 返回的是一个字典，用以展示子类的继承树，形式如：
 ```objc
 {
-NSObject : {
-UIResponder : {
-UIView: { ... }
+    NSObject : {
+                    UIResponder : {
+                                        UIView: { ... }
 
-...
-}
+                                        ...
+                                   }
 
-...
-}
+                    ...
+                }
 }
 ```
 ##### 其他方法还有
